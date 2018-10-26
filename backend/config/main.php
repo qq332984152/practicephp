@@ -11,7 +11,17 @@ return [
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log','queue'], // 把这个组件注册到控制台
-    'modules' => [],
+    'modules' => [
+        // 提供给API
+        'api' => [
+            'class' => 'backend\modules\api\Module',
+        ],
+        // 提供给客户端(web、手机客户端)
+        'app' => [
+            'class' => 'backend\modules\app\Module',
+        ],
+        'rbac' => 'dektrium\rbac\RbacWebModule',
+    ],
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-backend',
