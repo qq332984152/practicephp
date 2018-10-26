@@ -20,7 +20,6 @@ return [
         'app' => [
             'class' => 'backend\modules\app\Module',
         ],
-        'rbac' => 'dektrium\rbac\RbacWebModule',
     ],
     'components' => [
         'request' => [
